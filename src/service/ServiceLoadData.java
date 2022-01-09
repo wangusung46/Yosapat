@@ -38,10 +38,10 @@ public class ServiceLoadData {
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
         }
     }
-    
+
     public void loadDataTableCustomeCake(String[] dbTableRow, String whereValue, DefaultTableModel defaultTableModel) {
         defaultTableModel.getDataVector().removeAllElements();
         defaultTableModel.fireTableDataChanged();
@@ -75,6 +75,42 @@ public class ServiceLoadData {
             preparedStatement.close();
         } catch (SQLException e) {
             e.getMessage();
+        }
+    }
+
+    public void loadDataTableCustomeCakeSubTotal(String[] dbTableRow, String whereValue1, String whereValue12, DefaultTableModel defaultTableModel) {
+        defaultTableModel.getDataVector().removeAllElements();
+        defaultTableModel.fireTableDataChanged();
+        Object[] objects = new Object[dbTableRow.length];
+        try {
+            sql = "SELECT "
+                    + "cake.CakeName, "
+                    + "cake.CakeSize, "
+                    + "cake.CakeShape, "
+                    + "cake.CakePrice, "
+                    + "transactiondetail.Quantity, "
+                    + "cake.CakePrice * transactiondetail.Quantity AS SUB "
+                    + "FROM cake "
+                    + "INNER JOIN transactiondetail "
+                    + "ON cake.CakeID = transactiondetail.CakeID "
+                    + "INNER JOIN transactionheader "
+                    + "ON transactiondetail.TransactionID = transactionheader.TransactionID  "
+                    + "WHERE transactionheader.TransactionID = '" + whereValue1 + "' "
+                    + "AND transactionheader.UserID = '" + whereValue12 + "'";
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery(sql);
+            while (resultSet.next()) {
+                Integer i = 0;
+                for (String dbTableData : dbTableRow) {
+                    objects[i] = resultSet.getString(dbTableData);
+                    i++;
+                }
+                defaultTableModel.addRow(objects);
+            }
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 //    public static void main(String[] args) {

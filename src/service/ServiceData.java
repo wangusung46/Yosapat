@@ -53,9 +53,41 @@ public class ServiceData {
         }
     }
 
-    public String deleteDatas(String dbTableName, String dbKey, String id) {
+    public Boolean checkEmptyDbDatas(String[] dbDatas) {
+        for (int i = 0; i <= dbDatas.length - 1; i++) {
+            if (dbDatas[i].isEmpty()) {
+                System.out.println(dbDatas[i]);
+                return false;
+            }
+            System.out.println(dbDatas[i]);
+        }
+        return true;
+    }
+
+    public Boolean checkCostume(String cake, String user) {
+        boolean result;
         try {
-            sql = "DELETE FROM " + dbTableName + " WHERE " + dbKey + " = '" + id + "'";
+            sql = "SELECT * FROM cart WHERE UserID = '" + user + "'";
+            System.out.println(sql);
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery(sql);
+            while (resultSet.next()) {
+                if (resultSet.getString(2).equals(cake)) {
+                    result = false;
+                    return result;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        result = true;
+        return result;
+    }
+
+    public String deleteDatas(String dbTableName, String dbKey, String dbValue) {
+        try {
+            sql = "DELETE FROM " + dbTableName + " WHERE " + dbKey + " = '" + dbValue + "'";
+            System.out.println(sql);
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -65,7 +97,7 @@ public class ServiceData {
         }
     }
 
-    public void editDatas(String dbTableName, String[] dbTableDatas, String[] dbDatas, Integer edit) {
+    public String editDatas(String dbTableName, String[] dbTableDatas, String[] dbDatas, Integer edit) {
 
         try {
             sql = "UPDATE " + dbTableName + " SET " + sumEditDb(dbTableDatas) + " WHERE " + dbTableDatas[edit] + " = '" + dbDatas[edit] + "'";
@@ -76,8 +108,9 @@ public class ServiceData {
             }
             preparedStatement.executeUpdate();
             preparedStatement.close();
+            return "COMPLETE";
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            return e.getMessage();
         }
     }
 
@@ -153,12 +186,13 @@ public class ServiceData {
 //        };
 //        ServiceData data = new ServiceData();
 //    }
-    public String saveTransactionHeader(String[] dbValue) {
+    public String saveTransactionDetail(String[] dbValues) {
         try {
-            sql = "INSERT INTO transactionheader VALUES (? , ?, ?, ?)";
+            sql = "INSERT INTO transactiondetail VALUES (? , ?, ?)";
             preparedStatement = connection.prepareStatement(sql);
-            for (int i = 1; i < dbValue.length; i++) {
-                preparedStatement.setString(i, dbValue[i]);
+            for (int i = 1; i <= dbValues.length; i++) {
+                System.out.println(dbValues[i - 1]);
+                preparedStatement.setString(i, dbValues[i - 1]);
             }
             preparedStatement.executeUpdate();
             preparedStatement.close();
@@ -168,12 +202,11 @@ public class ServiceData {
         }
     }
 
-    public String saveTransaction(String[] dbValues) {
+    public String saveTransactionHeader(String[] dbValues) {
         try {
             sql = "INSERT INTO transactionheader VALUES (? , ?, ?, ?)";
             preparedStatement = connection.prepareStatement(sql);
             for (int i = 1; i <= dbValues.length; i++) {
-                System.out.println(dbValues[i - 1]);
                 preparedStatement.setString(i, dbValues[i - 1]);
             }
             preparedStatement.executeUpdate();

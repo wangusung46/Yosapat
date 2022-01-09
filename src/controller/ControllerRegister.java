@@ -14,6 +14,10 @@ public class ControllerRegister {
 
     @SuppressWarnings("empty-statement")
     public void initController(FormRegister formRegister, User user) {
+        formRegister.getjRadioMale().setActionCommand("Male");
+        formRegister.getjRadioFamale().setActionCommand("Famale");
+        formRegister.getjButtonRegister().setEnabled(false);
+        
         formRegister.getjButtonRegister().addActionListener(e -> performRegister(formRegister, user));
         formRegister.getjButtonLogin().addActionListener(e -> doLogin(formRegister, user));
         formRegister.getjCheckBox1().addItemListener((ItemEvent e) -> {

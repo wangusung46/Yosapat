@@ -93,10 +93,7 @@ public class FormItemProfile extends javax.swing.JFrame {
      */
     public FormItemProfile() {
         initComponents();
-        jRadioMale.setActionCommand("Male");
-        jRadioFamale.setActionCommand("Famale");
-        jRadioMale.setEnabled(false);
-        jRadioFamale.setEnabled(false);
+        
     }
 
     /**
@@ -144,7 +141,7 @@ public class FormItemProfile extends javax.swing.JFrame {
         jLabelTheme.setBackground(new java.awt.Color(0, 204, 204));
         jLabelTheme.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabelTheme.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTheme.setText("CakeLand");
+        jLabelTheme.setText("Author By Riyad");
         jLabelTheme.setOpaque(true);
 
         jLabelUserName.setText("Username");
@@ -234,10 +231,6 @@ public class FormItemProfile extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPasswordField))
@@ -248,7 +241,11 @@ public class FormItemProfile extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabelPassword2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPasswordFieldOld)))
+                        .addComponent(jPasswordFieldOld))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jButtonRegister)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -320,6 +317,7 @@ public class FormItemProfile extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

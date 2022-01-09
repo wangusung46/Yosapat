@@ -24,6 +24,11 @@ class ControllerProfile {
 
     @SuppressWarnings("deprecation")
     void initController(FormItemProfile formItemProfile, User user) {
+        formItemProfile.getjRadioMale().setActionCommand("Male");
+        formItemProfile.getjRadioFamale().setActionCommand("Famale");
+        formItemProfile.getjRadioMale().setEnabled(false);
+        formItemProfile.getjRadioFamale().setEnabled(false);
+        
         formItemProfile.getjTextUserName().setText(user.getUsername());
         formItemProfile.getjTextEmail().setText(user.getUserEmail());
         if(user.getUserGender().equals("Male")){

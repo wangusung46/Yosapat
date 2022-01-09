@@ -13,6 +13,14 @@ public class ControllerMainMenu {
 
     @SuppressWarnings("empty-statement")
     public void initController(FormMainMenu formMainMenu, User user) {
+        if(user.getUserRole().equals("User")){
+            formMainMenu.getjLabelTheme().setText("Hello " + user.getUsername() + "!");
+            formMainMenu.getjMenuCakeMenu().setVisible(false);
+        } else {
+            formMainMenu.getjLabelTheme().setText("");
+            formMainMenu.getjMenuTransaction().setVisible(false);
+        }
+        
         formMainMenu.getjMenuItemProfile().addActionListener(e -> doItemProfile(formMainMenu, user));
         formMainMenu.getjMenuItemLogout().addActionListener(e -> doItemLogout(formMainMenu, user));
         formMainMenu.getjMenuItemAllMenu().addActionListener(e -> doMenuItemAllMenu(formMainMenu, user));
@@ -57,15 +65,15 @@ public class ControllerMainMenu {
         formMainMenu.setVisible(false);
         FormViewItemTransaction formViewItemTransaction = new FormViewItemTransaction();
         formViewItemTransaction.setVisible(true);
-//        ControllerLogin controllerLogin = new ControllerLogin(user, formLogin);
-//        controllerLogin.initController();
+        ControllerTransaction controllerTransaction = new ControllerTransaction();
+        controllerTransaction.initController(formViewItemTransaction, user);
     }
 
     private void doMenuManageMenu(FormMainMenu formMainMenu, User user) {
         formMainMenu.setVisible(false);
         FormViewManageMenu formViewManageMenu = new FormViewManageMenu();
         formViewManageMenu.setVisible(true);
-//        ControllerLogin controllerLogin = new ControllerLogin(user, formLogin);
-//        controllerLogin.initController();
+        ControllerCake controllerCake = new ControllerCake();
+        controllerCake.initController(formViewManageMenu, user);
     }
 }

@@ -72,7 +72,7 @@ public class FormViewCheckOut extends javax.swing.JFrame {
         jLabelTheme.setBackground(new java.awt.Color(0, 204, 204));
         jLabelTheme.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabelTheme.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTheme.setText("CakeLand");
+        jLabelTheme.setText("Author By Riyad");
         jLabelTheme.setOpaque(true);
 
         jTableCake.setModel(new javax.swing.table.DefaultTableModel(
@@ -158,6 +158,7 @@ public class FormViewCheckOut extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

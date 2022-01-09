@@ -10,6 +10,8 @@
  */
 package view;
 
+import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import model.User;
 
@@ -24,14 +26,18 @@ public class FormMainMenu extends javax.swing.JFrame {
      */
     public FormMainMenu(User user) {
         initComponents();
-        if(user.getUserRole().equals("User")){
-            jLabelTheme.setText("Hello " + user.getUsername() + "!");
-            jMenuCakeMenu.setVisible(false);
-        } else {
-            jLabelTheme.setText("");
-            jMenuTransaction.setVisible(false);
-        }
-        
+    }
+
+    public JMenu getjMenuCakeMenu() {
+        return jMenuCakeMenu;
+    }
+
+    public JMenu getjMenuTransaction() {
+        return jMenuTransaction;
+    }
+
+    public JLabel getjLabelTheme() {
+        return jLabelTheme;
     }
 
     public JMenuItem getjMenuItemAllMenu() {
@@ -144,6 +150,7 @@ public class FormMainMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
