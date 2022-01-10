@@ -6,7 +6,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Khanza
+ * @author Yosapat
  */
 public class FormLogin extends javax.swing.JFrame {
 
@@ -65,7 +65,7 @@ public class FormLogin extends javax.swing.JFrame {
         jLabelTheme.setBackground(new java.awt.Color(0, 204, 204));
         jLabelTheme.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabelTheme.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTheme.setText("Author By Riyad");
+        jLabelTheme.setText("Cake LAnd");
         jLabelTheme.setOpaque(true);
 
         jTextUserName.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));

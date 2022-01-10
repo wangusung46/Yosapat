@@ -1,12 +1,12 @@
 /*
- * Copyright (c) 2022 Khanza.
+ * Copyright (c) 2022 Yosapat.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Khanza - initial API and implementation and/or initial documentation
+ *    Yosapat - initial API and implementation and/or initial documentation
  */
 package view;
 
@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Khanza
+ * @author Yosapat
  */
 public class FormRegister extends javax.swing.JFrame {
 
@@ -129,6 +129,7 @@ public class FormRegister extends javax.swing.JFrame {
         jTextAreaAddress = new javax.swing.JTextArea();
         jCheckBox1 = new javax.swing.JCheckBox();
         jButtonLogin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,7 +138,7 @@ public class FormRegister extends javax.swing.JFrame {
         jLabelTheme.setBackground(new java.awt.Color(0, 204, 204));
         jLabelTheme.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabelTheme.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTheme.setText("Author By Riyad");
+        jLabelTheme.setText("Cake LAnd");
         jLabelTheme.setOpaque(true);
 
         jLabelUserName.setText("Username");
@@ -183,6 +184,10 @@ public class FormRegister extends javax.swing.JFrame {
 
         jButtonLogin.setFont(new java.awt.Font("Dialog", 1, 8)); // NOI18N
         jButtonLogin.setText("Already have an Account? Login");
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Create Your Own Account");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -245,14 +250,17 @@ public class FormRegister extends javax.swing.JFrame {
                                         .addComponent(jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButtonLogin)))
-                                .addGap(0, 5, Short.MAX_VALUE)))))
+                                .addGap(0, 5, Short.MAX_VALUE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelTheme, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelTheme)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUserName)
@@ -361,6 +369,7 @@ public class FormRegister extends javax.swing.JFrame {
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JButton jButtonRegister;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAddress;
     private javax.swing.JLabel jLabelDOB;
     private javax.swing.JLabel jLabelEmail;

@@ -55,7 +55,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabelTheme" alignment="0" max="32767" attributes="0"/>
@@ -129,6 +129,7 @@
                               </Group>
                           </Group>
                       </Group>
+                      <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -138,7 +139,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabelTheme" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="jLabelTheme" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="22" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelUserName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -206,7 +209,7 @@
               <Font name="Dialog" size="48" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Author By Riyad"/>
+            <Property name="text" type="java.lang.String" value="Cake LAnd"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
@@ -339,6 +342,15 @@
               <Font name="Dialog" size="8" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Already have an Account? Login"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Dialog" size="18" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Create Your Own Account"/>
           </Properties>
         </Component>
       </SubComponents>
